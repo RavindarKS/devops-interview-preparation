@@ -1,2 +1,1 @@
-# devops-interview-preparation
-The repository is intended for revising DevOps tools and technologies in preparation for interviews.
+These include structured learning paths and key topics to cover for DevOps Preparation.
