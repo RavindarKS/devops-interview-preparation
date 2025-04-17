@@ -1,0 +1,20 @@
+## 🔐 Security Basics Scenarios
+
+### 1. Developer credentials leaked in Git. What do you do?
+**Answer:**
+- Immediately revoke the credentials.
+- Rotate any affected keys.
+- Remove them from history using `git filter-branch` or `BFG Repo-Cleaner`.
+- Recommit and force push (if needed).
+
+### 2. How do you rotate secrets?
+**Answer:**
+- Use secret managers with versioning and auto-rotation (Vault, Secrets Manager).
+- Automate with CI/CD pipelines.
+- Notify affected applications of secret change.
+
+### 3. Implement secure access reviews?
+**Answer:**
+- Perform regular IAM audits.
+- Use tools like AWS Access Analyzer, Azure IAM reports.
+- Automate least-privilege enforcement and expiration policies.
