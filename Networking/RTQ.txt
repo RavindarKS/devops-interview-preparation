@@ -1,0 +1,22 @@
+## 🌐 Networking Scenarios
+
+### 1. Internal access works, but external access fails?
+**Answer:**
+- Verify firewall rules, security groups, or NACLs.
+- Confirm NAT gateway or public IP setup.
+- Check DNS resolution.
+- Confirm the app is listening on the public interface.
+
+### 2. Port connectivity issue between services?
+**Answer:**
+- Use `telnet`, `nc`, or `curl` to test connectivity.
+- Check security groups and firewall rules.
+- Validate that the service is running on expected port.
+
+### 3. DNS resolution is failing?
+**Answer:**
+- Use `nslookup`, `dig` to check records.
+- Check `/etc/resolv.conf` or DNS settings.
+- Test with a public DNS server (e.g., 8.8.8.8).
+
+---

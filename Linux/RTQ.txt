@@ -1,0 +1,25 @@
+## 🐧 Linux Scenarios
+
+### 1. How do you recover a corrupted boot loader?
+**Answer:**
+- Boot into a live Linux USB.
+- Mount the root partition.
+- Use `chroot` into the mounted system.
+- Reinstall GRUB using `grub-install` and `update-grub`.
+
+### 2. Disk space fills up suddenly in production. What do you do?
+**Answer:**
+- Use `df -h`, `du -sh *` to identify usage.
+- Check `/var/log` for bloated logs.
+- Rotate logs using `logrotate`.
+- Clear temp/cache files with caution.
+- Communicate with teams if application logs are the cause.
+
+### 3. Network interface not coming up?
+**Answer:**
+- Check `ip link show` and `ip addr`
+- Validate config files (e.g., `/etc/network/interfaces`, `netplan`, or `NetworkManager`)
+- Restart service or bring interface up manually.
+- Check dmesg or `journalctl` logs.
+
+---

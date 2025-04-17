@@ -1,0 +1,33 @@
+## 🐍 Python for DevOps Scenarios
+
+### 1. Script to check disk usage and alert
+**Answer:**
+```python
+import shutil, smtplib
+
+usage = shutil.disk_usage('/')
+percent_used = usage.used / usage.total * 100
+
+if percent_used > 80:
+    print("Warning: High disk usage")
+    # Send alert email (via smtplib)
+```
+
+### 2. Automate EC2 start/stop with Boto3
+**Answer:**
+```python
+import boto3
+
+ec2 = boto3.client('ec2')
+ec2.stop_instances(InstanceIds=['i-123456789'])
+```
+
+### 3. Parse log files for error summary
+**Answer:**
+```python
+with open('app.log') as f:
+    errors = [line for line in f if 'ERROR' in line]
+    print(f"Found {len(errors)} error lines")
+```
+
+---

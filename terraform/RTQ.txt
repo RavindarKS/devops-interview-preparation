@@ -1,0 +1,31 @@
+## 🔧 Terraform Scenarios
+
+### 1. How would you manage infrastructure across multiple environments using Terraform?
+**Answer:**
+Use workspaces or separate state files for each environment (dev, staging, prod). Also structure code using modules to promote reuse. For example:
+- `environments/dev/main.tf`
+- `environments/prod/main.tf`
+Use backend configuration for remote state (S3 + DynamoDB or Azure Storage).
+
+### 2. How do you handle a failed `terraform apply` in production?
+**Answer:**
+- Run `terraform plan` to assess the current drift.
+- Check logs/output for the failure.
+- Revert or fix the change in code.
+- If required, manually roll back in the console and then run `terraform refresh`.
+
+### 3. How would you rollback infrastructure changes?
+**Answer:**
+Terraform does not support rollback. You must:
+- Use version control to revert code.
+- Apply the previous known-good version.
+- Optionally, use snapshots of state (for Terraform Cloud/Enterprise).
+
+### 4. How do you securely manage secrets in Terraform?
+**Answer:**
+- Use environment variables or secret management tools (Vault, SSM, Key Vault).
+- Never hardcode secrets.
+- Use `sensitive = true` for output suppression.
+- Limit state file access (encrypt and restrict permissions).
+
+---
